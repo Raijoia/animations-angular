@@ -73,7 +73,7 @@
       class="lista-tarefas card-{{ tarefa.categoria }}"
       *ngFor="let tarefa of listaTarefas; let i = index"
       (mouseover)="indexTarefa = i"
-      [@hihlightedState]="indexTarefa == i ? 'highlighted' : 'defaul'"
+      [@hihlightedState]="indexTarefa == i ? 'highlighted' : 'default'"
       >
       <div class="info-card">
         <p class="categoria-tarefa categoria-{{ tarefa.categoria }}">

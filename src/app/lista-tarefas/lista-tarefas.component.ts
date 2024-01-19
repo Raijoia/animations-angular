@@ -4,8 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
-import { state, style, trigger } from '@angular/animations';
-import { filter } from 'rxjs';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-lista-tarefas',
@@ -24,9 +23,14 @@ import { filter } from 'rxjs';
         style({
           border: '4px solid #B2B6FF',
           filter: 'brightness(92%)',
-          transition: 'all 0.2s linear',
         })
       ),
+      transition('default => highlighted', [
+        style({
+          transform: 'scale(1.02)',
+        }),
+        animate(200)
+      ]),
     ]),
   ],
 })
